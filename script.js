@@ -71,13 +71,13 @@ function operate(e) {
       input.textContent = a;
     }
   }
-  if (input.textContent.length > 13) {
+  /*if (input.textContent.length > 13) {
     input.textContent = "Error";
     a = "";
     b = "";
     operator = "";
     expression.textContent = "";
-  }
+  }*/
 }
 
 function calculate(a, b, operator) {
@@ -99,8 +99,8 @@ function calculate(a, b, operator) {
 function newA(e) {
   let result = calculate(parseFloat(a), parseFloat(b), operator);
   if (result.toString().length > 13) {
-    input.textContent = "Error";
-    a = "";
+    input.textContent = result.toExponential(8);
+    a = result.toExponential(8);
     b = "";
     operator = "";
     expression.textContent = "";
@@ -116,8 +116,8 @@ function newA(e) {
 function newA2(e) {
   let result = calculate(parseFloat(a), parseFloat(b), operator);
   if (result.toString().length > 13) {
-    input.textContent = "Error";
-    a = "";
+    input.textContent = result.toExponential(4);
+    a = result.toExponential(4);
     b = "";
     operator = "";
     expression.textContent = "";
